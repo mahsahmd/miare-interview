@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import FilterComponent from "./components/FilterComponent";
 import TransactionComponent from "./components/TransactionComponent";
 import { TransactionsWrapper } from "./components/transactionComponent.styles";
 import { getFilteredTransactins } from "./store/selector";
@@ -8,11 +9,16 @@ function App() {
   const filteredTransactions = useSelector(state => getFilteredTransactins(state.transactions))
   useGetData()
   return (
-    <TransactionsWrapper>
-      {filteredTransactions.length > 0 && filteredTransactions?.map((data) => {
-        return <TransactionComponent data={data} key={data.date} />
-      })}
-    </TransactionsWrapper>
+    <>
+      <FilterComponent />
+      <TransactionsWrapper>
+        {filteredTransactions.length > 0 && filteredTransactions?.map((data) => {
+          return <TransactionComponent data={data} key={data.date} />
+        })}
+      </TransactionsWrapper>
+
+    </>
+
   );
 }
 

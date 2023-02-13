@@ -1,4 +1,4 @@
-import { FILTER_TRANSACTION, GET_TRANSACTIONS } from './constants';
+import { FILTER_COURIER, FILTER_TRANSACTION_TYPE, GET_TRANSACTIONS } from './constants';
 
 const initialState = {
     allTransactions: [],
@@ -15,10 +15,21 @@ export const transactionsReducer = (state = initialState, action) => {
                 ...state,
                 allTransactions: action.payload
             }
-        case FILTER_TRANSACTION:
+        case FILTER_TRANSACTION_TYPE:
             return {
                 ...state,
-                filter: action.payload
+                filters: {
+                    courier: state.filters.courier,
+                    transaction: action.payload
+                }
+            }
+        case FILTER_COURIER:
+            return {
+                ...state,
+                filters: {
+                    courier: action.payload,
+                    transaction: state.filters.transaction
+                }
             }
         default:
             return state;

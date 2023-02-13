@@ -1,4 +1,4 @@
-import { FILTER_TRANSACTION, GET_TRANSACTIONS } from "./constants"
+import { FILTER_COURIER, FILTER_TRANSACTION_TYPE, GET_TRANSACTIONS } from "./constants"
 
 
 export const getTransactions = (data) => {
@@ -8,9 +8,15 @@ export const getTransactions = (data) => {
     }
 }
 
-export const setFilter = (filter) => {
+export const setTransactionFilter = (type) => {
     return {
-        type: FILTER_TRANSACTION,
-        payload: filter
+        type: FILTER_TRANSACTION_TYPE,
+        payload: type
+    }
+}
+export const setCourierFilter = (courier) => {
+    return {
+        type: FILTER_COURIER,
+        payload: courier
     }
 }

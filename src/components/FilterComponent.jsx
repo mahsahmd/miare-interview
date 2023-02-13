@@ -1,8 +1,11 @@
 import React from 'react'
+import TranactionsFilterDropdown from './TranactionsFilterDropdown'
 
 const FilterComponent = () => {
     return (
-        <div>FilterComponent</div>
+        <div>
+            <TranactionsFilterDropdown />
+        </div>
     )
 }
 
