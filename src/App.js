@@ -1,12 +1,18 @@
 import { useSelector } from "react-redux";
+import TransactionComponent from "./components/TransactionComponent";
+import { TransactionsWrapper } from "./components/transactionComponent.styles";
+import { getFilteredTransactins } from "./store/selector";
 import useGetData from "./utils/useGetData";
 
 function App() {
-  const { allTransactions } = useSelector(state => state.transactions)
+  const filteredTransactions = useSelector(state => getFilteredTransactins(state.transactions))
   useGetData()
-
   return (
-    <p>app</p>
+    <TransactionsWrapper>
+      {filteredTransactions.length > 0 && filteredTransactions?.map((data) => {
+        return <TransactionComponent data={data} key={data.date} />
+      })}
+    </TransactionsWrapper>
   );
 }
 

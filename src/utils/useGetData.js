@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch } from "react-redux";
 import { getTransactions } from '../store/actions';
 
@@ -40,9 +40,13 @@ const useGetData = () => {
             }
             return acc;
         }, {});
-        setGroupedData(Object.values(groupedData).sort((a, b) => {
+        const groupData = Object.values(groupedData).sort((a, b) => {
+            return new Date(b.date) - new Date(a.date);
+        })
+        groupData.map((item) => item.data.sort((a, b) => {
             return new Date(b.date) - new Date(a.date);
         }))
+        setGroupedData(groupData)
     }, [data])
     useEffect(() => {
         dispatch(getTransactions(groupedData))
