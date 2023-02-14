@@ -8,9 +8,8 @@ export const formatTransactionTypeToPersian = (type) => {
       return 'هزینه سفر';
     case 'concurrency_costs':
       return 'هزینه خرید ظرفیت';
-
     default:
-      break;
+      return 'تمامی تراکنش ها';
   }
 }
 

@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react'
-import { formatTransactionTypeToPersian } from '../utils/formatToPersian';
-import { getDay } from 'date-fns-jalali';
-import { convertToJalali, convertToJalaliDate, getDayFromDate, getHourFromDate } from '../utils/convertDate';
-import AmountComponent from './AmountComponent';
-import { ColoredText, DateWrapper, TransactionInfoWrapper, TransactionWrapper } from './transactionComponent.styles';
+import React from 'react'
+import { formatTransactionTypeToPersian } from '../../utils/formatToPersian';
+import { convertToJalali, convertToJalaliDate, getHourFromDate } from '../../utils/convertDate';
+import AmountComponent from '../amountComponent/AmountComponent';
+import { ColoredText, DateWrapper, TransactionInfoWrapper, TransactionWrapper } from './transactionsComponent.styles';
 
 const TransactionComponent = ({ data }) => {
     return (

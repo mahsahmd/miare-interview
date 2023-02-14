@@ -14,9 +14,7 @@ export const DateWrapper = styled.div`
 `;
 
 export const TransactionsWrapper = styled.div`
-    width: 100%;
-    max-width: 1200px;
-    margin: 64px auto 0 auto;
+    margin-top: 24px;
 
 `;
 
