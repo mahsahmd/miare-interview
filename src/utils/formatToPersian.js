@@ -5,7 +5,7 @@ export const formatTransactionTypeToPersian = (type) => {
     case 'trip_financials':
       return 'هزینه سفر';
     case 'misc_expenses':
-      return 'هزینه سفر';
+      return 'هزینه متفرقه';
     case 'concurrency_costs':
       return 'هزینه خرید ظرفیت';
     default:
