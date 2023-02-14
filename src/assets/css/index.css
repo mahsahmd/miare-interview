@@ -1,10 +1,11 @@
+@import '../font/iranyekan.css';
 
 html {
     font-size: 16px;
   }
   * {
     box-sizing: border-box;
-        font-family: iranYekan,'Helvetica',sans-serif !important;
+    font-family: iranYekan,'Helvetica',sans-serif !important;
 
   }
  
