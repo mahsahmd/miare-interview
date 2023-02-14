@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setTransactionFilter } from '../../store/actions';
-import { DropdownOption, DropdownOptions, DropdownSelectedItem } from './filterComponent.styles';
+import { Arrow, ArrowWrapper, DropdownOption, DropdownOptions, DropdownSelectedItem } from './filterComponent.styles';
 
 const filterOptions = [
     {
@@ -17,7 +17,7 @@ const filterOptions = [
         value: 'misc_expenses'
     },
     {
-        fa: 'تمامی تراکنش ها',
+        fa: 'تمام تراکنش ها',
         value: ''
     },
     {
@@ -35,7 +35,8 @@ const TranactionsFilterDropdown = () => {
     }
     return (
         <div>
-            <DropdownSelectedItem onClick={() => { setShowOptions(state => !state) }}>{filterOptions?.find((item) => item.value === filters.transaction)?.fa}</DropdownSelectedItem>
+
+            <DropdownSelectedItem onClick={() => { setShowOptions(state => !state) }}>{filterOptions?.find((item) => item.value === filters.transaction)?.fa}    <ArrowWrapper><Arrow /></ArrowWrapper>   </DropdownSelectedItem>
             <DropdownOptions show={showOptions}>
                 {
 

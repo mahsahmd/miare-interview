@@ -9,7 +9,7 @@ export const formatTransactionTypeToPersian = (type) => {
     case 'concurrency_costs':
       return 'هزینه خرید ظرفیت';
     default:
-      return 'تمامی تراکنش ها';
+      return 'تمام تراکنش ها';
   }
 }
 
