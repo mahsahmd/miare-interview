@@ -7,8 +7,8 @@ export const DateWrapper = styled.div`
     display: flex;
     justify-content: start;
     align-items: center;
-    padding-right: 16px;
-    color: #635d63;
+    padding-right: 24px;
+    color: #363336;
     font-weight: 500;
 
 `;
@@ -24,6 +24,8 @@ export const TransactionWrapper = styled.div`
     padding: 18px 24px;
     display: flex;
     justify-content: space-between;
+       font-weight: 500;
+    font-size: 14px;
 
 `;
 
@@ -35,6 +37,5 @@ export const TransactionInfoWrapper = styled.div`
 
 export const ColoredText = styled.p`
     color:${props => props.color};
-    font-weight: 500;
-    font-size: 16px;
+ 
 `;

@@ -7,11 +7,11 @@ describe('amount component', () => {
     afterEach(cleanup);
     it('render the amount with a plus sign for positive numbers', () => {
         render(<AmountComponent amount={2000} />);
-        expect(screen.getByTestId('amount').textContent).toBe('+ 2000');
+        expect(screen.getByTestId('amount').textContent).toBe('+ 2,000');
     });
     it('render the amount if the amount is negative', () => {
         render(<AmountComponent amount={-2000} />);
-        expect(screen.getByTestId('amount').textContent).toBe('-2000');
+        expect(screen.getByTestId('amount').textContent).toBe('- 2,000');
     });
     it('render the a text if the amount is negative', () => {
         render(<AmountComponent amount={0} />);
