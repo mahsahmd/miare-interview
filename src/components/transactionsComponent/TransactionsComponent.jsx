@@ -17,9 +17,9 @@ const TransactionComponent = ({ data }) => {
                                 return (
                                     <TransactionWrapper key={item.id}>
                                         <TransactionInfoWrapper>
-                                            <p>{convertToJalaliDate(item.date)},{getHourFromDate(item.date)}</p>
+                                            <p>{getHourFromDate(item.date)}, {convertToJalaliDate(item.date)} </p>
 
-                                            <ColoredText color={item.type === 'payments' ? 'green' : 'red'}>{formatTransactionTypeToPersian(item.type)}</ColoredText>
+                                            <ColoredText color={item.amount > 0 || item['final_price'] > 0 ? 'green' : 'red'}>{formatTransactionTypeToPersian(item.type)}</ColoredText>
                                             {
                                                 item.type === 'trip_financials' && (
                                                     <>

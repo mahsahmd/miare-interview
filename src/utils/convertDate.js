@@ -1,10 +1,8 @@
-import { format as jalaliFormat, get } from "date-fns-jalali"
-import { format } from 'date-fns';
-
+import { format as jalaliFormat } from "date-fns-jalali"
 
 export const convertToJalali = (date) => {
     const newDate = new Date(date);
-    return jalaliFormat(newDate, ' yyyy  dd MMMM')
+    return jalaliFormat(newDate, 'dd MMMM yyyy')
 }
 export const convertToJalaliDate = (date) => {
     const newDate = new Date(date);
